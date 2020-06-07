@@ -21,3 +21,7 @@ code {
 .lessonsLink {
   text-decoration: none;
 }
+
+.done {
+  text-decoration: line-through;
+}
