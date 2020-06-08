@@ -3,6 +3,15 @@ import TodoList from './TodoList'
 import myContext from './Context'
 import AddTodo from './AddTodo'
 
+
+const styles = {
+    p: {
+        margin: '0',
+        padding: '0',
+        fontSize: '.85em'
+    }
+}
+
 function LessonOne() {
     
     const [todos, setTodos] = React.useState([
@@ -43,7 +52,10 @@ function LessonOne() {
     return(
         <myContext.Provider value={{removeTodo}}>     
             <AddTodo onCreate={addTodo}/>
-            <TodoList todos={todos} onToggle={toggleTodo} /> 
+            {
+            (todos.length > 0) ?
+                <TodoList todos={todos} onToggle={toggleTodo} /> : <p style={styles.p}>No todo, dude</p>
+            }
         </myContext.Provider>
     ) 
 }

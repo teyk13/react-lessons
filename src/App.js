@@ -3,8 +3,8 @@ import LessonOne from './lesson-one/LessonOne'
 
 function App() {
   return(
-    <div className='wrapper'>
-        <LessonOne />
+    <div className='Lessons'>
+        <LessonOne className='LessonOneStyle' />
     </div>
   );
 }

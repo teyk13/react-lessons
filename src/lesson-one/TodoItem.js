@@ -7,21 +7,21 @@ const styles = {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '.5rem 1rem',
+        padding: '.2rem 1rem',
         border: '1px solid #ccc',
-        borderRadius: '4px',
-        marginBottom: '.5rem'
+        borderRadius: '15px',
+        marginBottom: '.5rem',
     },
     
     input: {
-        marginRight: '1rem'
+        marginRight: '1rem',
     },
 
     btntimes: {
-        background: '#e6e6',
-        borderRadius: '20%',
+        background: '#ccc',
         color: '#ffff',
-        border: 'none'
+        border: '1px #ccc1',
+        borderRadius: '25px'
     }
 }
 

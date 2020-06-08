@@ -8,11 +8,10 @@ const styles = {
     ul: {
         listStyle: 'none',
         margin: '0',
-        padding: '0'
+        padding: '0',
+        fontSize: '.85em'
     }
 }
-
-
 
 function TodoList(props) {
     return(
