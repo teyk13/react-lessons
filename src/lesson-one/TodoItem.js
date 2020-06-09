@@ -2,28 +2,6 @@ import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import myContext from './Context'
 
-const styles = {
-    li: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '.2rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '15px',
-        marginBottom: '.5rem',
-    },
-    
-    input: {
-        marginRight: '1rem',
-    },
-
-    btntimes: {
-        background: '#ccc',
-        color: '#ffff',
-        border: '1px #ccc1',
-        borderRadius: '25px'
-    }
-}
 
 function TodoItem({todo, index, onChange}) {
     
@@ -32,22 +10,21 @@ function TodoItem({todo, index, onChange}) {
     const classes = []
 
     if (todo.completed) {
-        classes.push('done')
+        classes.push('todoDone')
     }
 
     return(
-        <li style={styles.li}>
-            <span className={classes.join(' ')}>
-                <input type='checkbox' 
-                    checked={todo.completed}
-                    style={styles.input} 
+        <li className='todoItems'>
+            <span className={`todoItems` + classes.join(' ')}>
+                <input className='todoItems' type='checkbox' 
+                    checked={todo.completed} 
                     onChange={() => onChange(todo.id)}/>
                     {index + 1}
                     &nbsp;
                     {todo.title}
             </span>
 
-            <button style={styles.btntimes} onClick={removeTodo.bind(null, todo.id)}>&times;</button>
+            <button className='Btn_Remove' onClick={removeTodo.bind(null, todo.id)}>&times;</button>
         </li>
     )
 }

@@ -16,35 +16,38 @@ const styles = {
         flexBasis: '80%',
         border: '1px solid #bbb',
         borderRadius:'20px',
-    },
-    
-    button: {
-        background: '#1abc9c',
-        border:'none',
-        borderRadius:'20px',
-        color: 'white',
-        cursor: 'pointer'
+    }
+}
+
+function useInputValue(defaultValue = '') {
+    const [value, setValue] = useState(defaultValue)
+
+    return {
+        bind: {
+            value,
+            onChange: event => setValue(event.target.value)
+        },
+        clear: () => setValue(''),
+        value: () => value
     }
 }
 
 function AddTodo({onCreate}) {
-    const [value, setValue] = useState('')
-
+    const input = useInputValue('')
     
-function submitHandler(event) {
-    
+function submitHandler(event) {   
     event.preventDefault()  
 
-    if (value.trim()) {
-        onCreate(value)
-        setValue('')
+    if (input.value().trim()) {
+        onCreate(input.value())
+        input.clear()
     }
 }
 
     return (
         <form style={styles.form} onSubmit={submitHandler}>
-            <input style={styles.input} value={value} onChange={event => setValue(event.target.value)}/>
-            <button style={styles.button} type="submit">Add todo</button>
+            <input style={styles.input} {...input.bind}/>
+            <button className='Btn_Lessons' type='submit'>Add todo</button>
         </form>
     )
 }

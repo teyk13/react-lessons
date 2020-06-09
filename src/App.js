@@ -1,12 +1,18 @@
 import React from 'react'
-import LessonOne from './lesson-one/LessonOne'
+import Modal from './modal/Modal'
 
 function App() {
   return(
-    <div className='Lessons'>
-        <LessonOne className='LessonOneStyle' />
+
+    <div className=''>
+        <header className='header'>
+            <div>label</div>
+        </header>
+
+        <Modal />
     </div>
-  );
+
+  )
 }
 
-export default App;
+export default App

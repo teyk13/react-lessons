@@ -1,12 +1,11 @@
 body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    background-color:#dfd3d3ea;
+    line-height: 1.14vmax;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
@@ -14,16 +13,147 @@ code {
     monospace;
 }
 
-.Lessons {
-  padding-top: .1rem;
-  margin: 0 auto;
-  width: 400px;
+.header {
+  display: grid;
+  height: 3vh;
+  width: auto;
 }
 
-.lessonsLink {
-  text-decoration: none;
-}
+.Modal_Lessons {
+  display: grid;
+  padding: 2rem;
+  width: auto;
+  border-radius: 5px;
+  background: white;
+  height: auto;
+} 
 
-.done {
+.todoDone {
   text-decoration: line-through;
 }
+
+.todoList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  display: list-item;
+}
+
+li.todoItems {
+  display: flex;
+  background: whitesmoke;
+  justify-content: space-between;
+  align-items: center;
+  padding: .2rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  margin-bottom: .5rem;
+}
+
+input.todoItems {
+  margin-right: 1rem;
+}
+
+
+
+      .lds-spinner {
+        color: official;
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-spinner div {
+        transform-origin: 40px 40px;
+        animation: lds-spinner 1.2s linear infinite;
+      }
+      .lds-spinner div:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 37px;
+        width: 6px;
+        height: 18px;
+        border-radius: 20%;
+        background: #1abc9c;
+      }
+      .lds-spinner div:nth-child(1) {
+        transform: rotate(0deg);
+        animation-delay: -1.1s;
+      }
+      .lds-spinner div:nth-child(2) {
+        transform: rotate(30deg);
+        animation-delay: -1s;
+      }
+      .lds-spinner div:nth-child(3) {
+        transform: rotate(60deg);
+        animation-delay: -0.9s;
+      }
+      .lds-spinner div:nth-child(4) {
+        transform: rotate(90deg);
+        animation-delay: -0.8s;
+      }
+      .lds-spinner div:nth-child(5) {
+        transform: rotate(120deg);
+        animation-delay: -0.7s;
+      }
+      .lds-spinner div:nth-child(6) {
+        transform: rotate(150deg);
+        animation-delay: -0.6s;
+      }
+      .lds-spinner div:nth-child(7) {
+        transform: rotate(180deg);
+        animation-delay: -0.5s;
+      }
+      .lds-spinner div:nth-child(8) {
+        transform: rotate(210deg);
+        animation-delay: -0.4s;
+      }
+      .lds-spinner div:nth-child(9) {
+        transform: rotate(240deg);
+        animation-delay: -0.3s;
+      }
+      .lds-spinner div:nth-child(10) {
+        transform: rotate(270deg);
+        animation-delay: -0.2s;
+      }
+      .lds-spinner div:nth-child(11) {
+        transform: rotate(300deg);
+        animation-delay: -0.1s;
+      }
+      .lds-spinner div:nth-child(12) {
+        transform: rotate(330deg);
+        animation-delay: 0s;
+      }
+      @keyframes lds-spinner {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+.Btn_Lessons {
+  background: #1abc9c;
+  border: none;
+  border-style: solid;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.Btn_Remove {
+  background: #ccc;
+  color: #ffff;
+  border: 1px #ccc;
+  border-radius: 25px;
+}
+
+/* .Modal {
+  display: grid;
+  justify-content: center;
+  padding-top: 5rem;
+}*/

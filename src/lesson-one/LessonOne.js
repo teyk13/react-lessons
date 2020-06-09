@@ -1,24 +1,24 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import TodoList from './TodoList'
 import myContext from './Context'
 import AddTodo from './AddTodo'
+import Loader from '../Loader'
 
-
-const styles = {
-    p: {
-        margin: '0',
-        padding: '0',
-        fontSize: '.85em'
-    }
-}
 
 function LessonOne() {
     
-    const [todos, setTodos] = React.useState([
-        {id: 1, completed: true, title: 'Learn JavaScript'},
-        {id: 2, completed: true, title: 'Learn JSX'},
-        {id: 3, completed: false, title: 'Learn React'},
-      ])
+    const [todos, setTodos] = React.useState([])
+    const [loading, setLoading] = React.useState(true)
+
+      useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
+            .then(response => response.json())
+            .then(todos => {
+                setTodos(todos)
+                setLoading(false)
+
+            })
+      }, [])
 
     function toggleTodo(id) {
           setTodos(
@@ -50,14 +50,21 @@ function LessonOne() {
     // https://ru.reactjs.org/docs/context.html#caveats
 
     return(
-        <myContext.Provider value={{removeTodo}}>     
-            <AddTodo onCreate={addTodo}/>
-            {
-            (todos.length > 0) ?
-                <TodoList todos={todos} onToggle={toggleTodo} /> : <p style={styles.p}>No todo, dude</p>
-            }
-        </myContext.Provider>
+            <myContext.Provider value={{removeTodo}}>     
+                <AddTodo onCreate={addTodo}/>
+
+                {loading && 
+                    <Loader />
+                }
+
+                {(todos.length > 0) ? 
+                    <TodoList todos={todos} onToggle={toggleTodo} /> : 
+                        loading ? null : 
+                            <p> No todo, dude </p> 
+                        
+                }
+            </myContext.Provider>
     ) 
 }
 
-export default LessonOne;
+export default LessonOne
