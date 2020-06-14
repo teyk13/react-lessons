@@ -9,10 +9,6 @@ function TodoItem({todo, index, onChange}) {
     
     const classes = []
 
-    if (todo.completed) {
-        classes.push('todoDone')
-    }
-
     return(
         <li className='todoItems'>
             <span className={`todoItems` + classes.join(' ')}>

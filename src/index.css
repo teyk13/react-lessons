@@ -1,4 +1,4 @@
-body {
+html, body {
     background-color:#dfd3d3ea;
     line-height: 1.14vmax;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -14,29 +14,29 @@ code {
 }
 
 .header {
-  display: grid;
+  display: flex;
+  align-items: center;
   height: 3vh;
-  width: auto;
+  width: 100%;
+  position: fixed;
 }
 
-.Modal_Lessons {
-  display: grid;
+.Modal {
+  width: 60vw;
+  height: auto;
+  display: flex;
   padding: 2rem;
-  width: auto;
+  justify-content: center;
   border-radius: 5px;
   background: white;
-  height: auto;
 } 
-
-.todoDone {
-  text-decoration: line-through;
-}
 
 .todoList {
   list-style: none;
+  justify-items: save;
   margin: 0;
   padding: 0;
-  font-size: 1em;
+  font-size: .9em;
   display: list-item;
 }
 
@@ -46,9 +46,19 @@ li.todoItems {
   justify-content: space-between;
   align-items: center;
   padding: .2rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 15px;
+  border: 1.2px solid #ccc;
+  border-radius: 10px;
   margin-bottom: .5rem;
+  transition-property: border-bottom-right-radius, border-top-right-radius, border, color, background-color;
+  transition-duration: .5s;
+}
+
+li.todoItems:hover {
+  color: #1abc9c;
+  border-top-right-radius: 0px; 
+  border-bottom-right-radius: 0px;
+  opacity: 0.9;
+  border: 1.2px solid #1abc9c;
 }
 
 input.todoItems {
@@ -139,21 +149,35 @@ input.todoItems {
 .Btn_Lessons {
   background: #1abc9c;
   border: none;
-  border-style: solid;
+  border-style: 1px solid;
   border-radius: 15px;
   color: white;
+  cursor: pointer;
+  margin: 10px;
+  transition-property: color, background-color;
+  transition-duration: 1s;
+}
+
+.Btn_Lessons:hover {
+  background: white;
+  border: none;
+  border-style: 1px solid;
+  border-radius: 15px;
+  color: #1abc9c;
   cursor: pointer;
 }
 
 .Btn_Remove {
   background: #ccc;
   color: #ffff;
-  border: 1px #ccc;
+  border: 1px solid #ccc;
   border-radius: 25px;
+  transition-property: color, background-color;
+  transition-duration: .5s;
 }
 
-/* .Modal {
-  display: grid;
-  justify-content: center;
-  padding-top: 5rem;
-}*/
+.Btn_Remove:hover {
+  border: 1px solid #1abc9c;
+  color: #1abc9c;
+  background: whitesmoke;
+}

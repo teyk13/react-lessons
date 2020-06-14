@@ -5,7 +5,7 @@ import LessonOne from '../lesson-one/LessonOne'
 export default class Modal extends React.Component {
     
     state = {
-        isOpen: false
+        LessonIsOpen: false
     }
 
     
@@ -16,11 +16,11 @@ export default class Modal extends React.Component {
                 <div className='Modal'>
                     <div className='Modal_Lessons'>
 
-                        <button className='Btn_Lessons' onClick={() => this.setState({isOpen: true})}>Lesson 1</button>
-                        {this.state.isOpen && (
+                        <button className='Btn_Lessons' onClick={() => this.setState({LessonIsOpen: true})}>Lesson 1</button>
+                        {this.state.LessonIsOpen && (
                             <div>
                                 <LessonOne className='' />
-                                <button className='Btn_Lessons' onClick={() => this.setState({isOpen: false})}>Close</button>
+                                <button className='Btn_Lessons' onClick={() => this.setState({LessonIsOpen: false})}>Close</button>
                             </div>
                         )}
 
